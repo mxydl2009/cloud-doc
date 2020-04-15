@@ -11,7 +11,7 @@
 # production
 /build
 
-# misc
+# miscgit 
 .DS_Store
 .env.local
 .env.development.local
@@ -21,3 +21,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# 一个用来测试内部代码的文件
+test.js

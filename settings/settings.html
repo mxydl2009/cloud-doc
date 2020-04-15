@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>设置</title>
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./settings.css">
+</head>
+<body>
+  <div class="container mt-4">
+    <h5>设置</h5>
+    <form id="settings-form">
+      <ul class="nav nav-tabs mb-3">
+        <li class="nav-item">
+          <a href="#" class="nav-link active" data-tab='#config-file-location'>文件存储位置</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link" data-tab="#qiniu-sync-params">七牛云同步</a>
+        </li>
+      </ul>
+      <div id="config-file-location" class="config-area mt4">
+        <div class="form-group">
+          <label for="savedFileLocation">选择文件存储位置</label>
+          <div class="input-group mb-2">
+            <input type="text"
+              id="savedFileLocation" class="form-control" 
+              placeholder="当前存储地址" readonly
+            >
+            <div class="input-group-append">
+              <button class="btn btn-outline-primary" type="button" id="select-new-location">选择新的存储位置</button>
+            </div> 
+          </div>
+        </div>        
+      </div>
+      <div id="qiniu-sync-params" class="config-area mt4">
+        <div class="form-group">
+          <div class="row align-items-center">
+            <div class="col-3">
+              <label for="accessKey">Access Key</label>
+            </div>
+            <div class="col-9">
+              <input type="text"
+                id="accessKey" class="form-control" 
+                placeholder="请输入Access Key" required
+              >                        
+            </div>
+          </div>
+          <div class="row mb-2">
+            <div class="col-3"></div>
+            <div class="col-9">
+              <small id="access-key-help-bloac" class="form-text text-muted">
+                请在七牛云个人主页密钥管理查看
+              </small> 
+            </div>
+          </div>
+          <div class="row align-items-center">
+            <div class="col-3">
+              <label for="secretKey">Secret Key</label>
+            </div>
+            <div class="col-9">
+              <input type="password"
+                id="secretKey" class="form-control" 
+                placeholder="请输入Secret Key" required
+              >                       
+            </div>
+          </div>
+          <div class="row mb-2">
+            <div class="col-3"></div>
+            <div class="col-9">
+              <small id="secret-key-help-bloac" class="form-text text-muted">
+                请在七牛云个人主页密钥管理查看
+              </small> 
+            </div>
+          </div>
+          <div class="row align-items-center">
+            <div class="col-3">
+              <label for="">Bucket名称</label>              
+            </div>
+            <div class="col-9">
+              <input type="text"
+                id="bucketName" class="form-control" 
+                placeholder="请输入Bucket名称"
+              >
+            </div>
+          </div>
+          <div class="row mb-2">
+            <div class="col-3"></div>
+            <div class="col-9">
+              <small id="bucket-help-bloac" class="form-text text-muted">
+                请在七牛云对象存储空间查看
+              </small> 
+            </div>
+          </div>
+        </div> 
+      </div>
+      <button type="submit" class="btn btn-primary">保存</button>
+    </form>
+  </div>
+  <script>
+    require('./settings.js')
+  </script>
+</body>
+</html>
